@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta name="supported-color-schemes" content="light">
+<!-- DRAFT ONLY: delete the next line at go-live so Google can index the site -->
+<meta name="robots" content="noindex">
+<title>Healing Point | Acupuncture in Tulsa, Oklahoma</title>
+<meta name="description" content="Healing Point is an acupuncture practice in Tulsa, Oklahoma. Gentle, unhurried care for pain, sleep, stress, digestion, and hormone changes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&family=Karla:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme: light only;
+  --ink:#22211C;
+  --ink-soft:#5A574C;
+  --paper:#E9E6DB;
+  --paper-warm:#F1EEE4;
+  --pine:#1C2B26;
+  --moxa:#9BA88A;
+  --amber:#B8802A;
+  --plum:#5E3141;
+  --line:rgba(34,33,28,.16);
+  --max:1120px;
+  --gutter:clamp(20px,5vw,64px);
+  --spine:clamp(0px,4vw,72px);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{
+  margin:0;
+  background-color:var(--paper);
+  background-image:linear-gradient(180deg, rgba(255,255,255,.14), rgba(255,255,255,0) 420px);
+  color:var(--ink);
+  font-family:"Karla",system-ui,sans-serif;
+  font-size:17px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{font-family:"Newsreader",Georgia,serif;font-weight:300;margin:0;letter-spacing:-.01em}
+p{margin:0 0 1em}
+a{color:inherit}
+
+/* ---------- shell ---------- */
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gutter)}
+.spine{position:relative}
+.spine::before{
+  content:"";position:absolute;top:0;bottom:0;left:calc(var(--gutter) + var(--spine) * .5);
+  width:1px;background:var(--line);
+}
+.spine::after{
+  content:"";position:absolute;top:0;left:calc(var(--gutter) + var(--spine) * .5);
+  width:1px;height:var(--progress,0%);background:var(--amber);opacity:.75;
+}
+@media (max-width:860px){.spine::before,.spine::after{display:none}}
+
+/* mobile: the meridian becomes a progress hairline at the top */
+.topline{
+  position:fixed;top:0;left:0;height:3px;width:var(--progress,0%);
+  background:var(--amber);z-index:30;display:none;transition:width .1s linear;
+}
+@media (max-width:860px){.topline{display:block}}
+@media (prefers-reduced-motion:reduce){.topline{transition:none}}
+
+/* hold the palette even if the OS or browser asks for dark */
+@media (prefers-color-scheme:dark){
+  body{background:var(--paper);color:var(--ink)}
+  .reasons,.faq,.cell{background:var(--paper-warm)}
+  .visit{background:var(--pine);color:var(--paper-warm)}
+}
+
+section{position:relative;padding:clamp(64px,9vw,124px) 0}
+section > .wrap{padding-left:calc(var(--gutter) + var(--spine))}
+@media (max-width:860px){section > .wrap{padding-left:var(--gutter)}}
+
+.eyebrow{
+  font-size:12px;letter-spacing:.18em;text-transform:uppercase;
+  font-weight:600;color:var(--ink-soft);margin:0 0 22px;position:relative;
+}
+.eyebrow::before{
+  content:"";position:absolute;left:calc(-1 * var(--spine) * .5 - 4.5px);top:.42em;
+  width:9px;height:9px;border-radius:50%;background:var(--pine);
+}
+@media (max-width:860px){.eyebrow::before{display:none}}
+
+.lede{font-size:clamp(19px,2.1vw,22px);line-height:1.55;color:var(--ink-soft);max-width:56ch}
+
+/* ---------- header ---------- */
+header{position:relative;z-index:5;padding:26px 0}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.mark{font-family:"Newsreader",serif;font-size:21px;letter-spacing:.04em;text-decoration:none;display:flex;align-items:center;gap:10px}
+.mark span{width:8px;height:8px;border-radius:50%;background:var(--amber);display:inline-block}
+.bar nav{display:flex;gap:26px;font-size:14px}
+.bar nav a{text-decoration:none;color:var(--ink-soft)}
+.bar nav a:hover{color:var(--ink)}
+@media (max-width:720px){.bar nav{display:none}}
+
+/* ---------- hero ---------- */
+.hero{padding-top:clamp(40px,6vw,80px)}
+.hero h1{
+  font-size:clamp(42px,7.4vw,86px);line-height:1.02;max-width:15ch;margin-bottom:28px;
+}
+.hero h1 em{font-style:italic;color:var(--plum)}
+.hero .lede{max-width:50ch}
+.actions{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:38px}
+.btn{
+  display:inline-block;background:var(--pine);color:var(--paper-warm);text-decoration:none;
+  padding:15px 28px;border-radius:999px;font-weight:600;font-size:15px;letter-spacing:.01em;
+  transition:background .2s ease,transform .2s ease;
+}
+.btn:hover{background:#2a3f38;transform:translateY(-1px)}
+.btn-ghost{
+  display:inline-block;text-decoration:none;padding:15px 26px;border-radius:999px;
+  border:1px solid var(--line);font-weight:600;font-size:15px;
+}
+.btn-ghost:hover{border-color:var(--ink)}
+.hero-meta{margin-top:30px;font-size:14px;color:var(--ink-soft)}
+
+/* ---------- reasons ---------- */
+.reasons{
+  background-color:var(--paper-warm);
+  background-image:linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,0));
+}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin-top:44px}
+.cell{background:var(--paper-warm);padding:26px 24px 30px}
+.cell h3{font-size:21px;margin-bottom:8px}
+.cell p{font-size:14.5px;color:var(--ink-soft);margin:0}
+.note{margin-top:28px;font-size:15px;color:var(--ink-soft);max-width:58ch}
+
+/* ---------- about ---------- */
+.about-grid{display:grid;grid-template-columns:1fr 1.35fr;gap:clamp(28px,5vw,64px);align-items:start;margin-top:40px}
+@media (max-width:820px){.about-grid{grid-template-columns:1fr}}
+.portrait{
+  aspect-ratio:4/5;border-radius:4px;position:relative;overflow:hidden;
+  background:
+    radial-gradient(120% 90% at 30% 15%, rgba(184,128,42,.28), transparent 60%),
+    linear-gradient(160deg,#2A3B34,#1C2B26 60%, #16211D);
+  display:flex;align-items:flex-end;padding:24px;
+}
+.portrait em{
+  font-family:"Newsreader",serif;font-style:italic;color:rgba(241,238,228,.72);
+  font-size:16px;line-height:1.4;
+}
+.portrait::after{
+  content:"";position:absolute;inset:0;
+  background-image:radial-gradient(rgba(241,238,228,.16) 1px, transparent 1px);
+  background-size:26px 26px;opacity:.5;
+}
+.about h2{font-size:clamp(30px,3.6vw,44px);line-height:1.14;margin-bottom:22px;max-width:20ch}
+.creds{margin-top:26px;padding-top:20px;border-top:1px solid var(--line);font-size:14.5px;color:var(--ink-soft)}
+.creds div{margin-bottom:6px}
+
+/* ---------- visit ---------- */
+.visit{background:var(--pine);color:var(--paper-warm)}
+.visit .eyebrow{color:rgba(241,238,228,.78)}
+.visit .eyebrow::before{background:var(--amber)}
+.visit h2{font-size:clamp(30px,3.6vw,44px);margin-bottom:14px}
+.visit .lede{color:rgba(241,238,228,.72)}
+.steps{margin-top:52px;border-top:1px solid rgba(241,238,228,.16)}
+.step{display:grid;grid-template-columns:110px 1fr;gap:clamp(16px,4vw,48px);padding:26px 0;border-bottom:1px solid rgba(241,238,228,.16)}
+@media (max-width:620px){.step{grid-template-columns:1fr;gap:6px}}
+.clock{font-family:"Newsreader",serif;font-size:22px;color:#D9A03F;font-variant-numeric:tabular-nums}
+.step h3{font-size:22px;margin-bottom:6px}
+.step p{color:rgba(241,238,228,.7);font-size:15px;margin:0;max-width:60ch}
+
+/* ---------- pricing ---------- */
+.rows{margin-top:42px;border-top:1px solid var(--line)}
+.row{display:flex;justify-content:space-between;align-items:baseline;gap:24px;padding:22px 0;border-bottom:1px solid var(--line)}
+.row h3{font-size:23px}
+.row p{font-size:14.5px;color:var(--ink-soft);margin:6px 0 0;max-width:46ch}
+.price{font-family:"Newsreader",serif;font-size:30px;white-space:nowrap}
+
+/* ---------- faq ---------- */
+.faq{
+  background-color:var(--paper-warm);
+  background-image:linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,0));
+}
+details{border-bottom:1px solid var(--line);padding:22px 0}
+details:first-of-type{border-top:1px solid var(--line);margin-top:42px}
+summary{
+  font-family:"Newsreader",serif;font-size:clamp(21px,2.4vw,26px);cursor:pointer;
+  list-style:none;display:flex;justify-content:space-between;gap:20px;align-items:center;
+}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--amber);font-size:24px;line-height:1}
+details[open] summary::after{content:"–"}
+details p{margin:16px 0 0;color:var(--ink-soft);max-width:64ch;font-size:15.5px}
+
+/* ---------- book ---------- */
+.book h2{font-size:clamp(32px,4.6vw,58px);max-width:16ch;line-height:1.08;margin-bottom:24px}
+.info{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:36px;margin-top:56px;padding-top:34px;border-top:1px solid var(--line)}
+.info h4{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);margin:0 0 12px;font-family:"Karla",sans-serif;font-weight:600}
+.info p,.info a{font-size:15.5px;margin:0 0 4px;text-decoration:none}
+.info a:hover{color:var(--amber)}
+.hours{display:flex;justify-content:space-between;font-size:15px;max-width:230px;color:var(--ink-soft)}
+.hours span:first-child{color:var(--ink)}
+
+footer{padding:40px 0 120px;font-size:13px;color:var(--ink-soft)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between}
+
+/* ---------- sticky mobile CTA ---------- */
+.sticky{
+  position:fixed;left:0;right:0;bottom:0;z-index:20;padding:12px 16px;
+  background:rgba(233,230,219,.94);backdrop-filter:blur(8px);border-top:1px solid var(--line);
+  display:none;gap:10px;
+}
+.sticky .btn,.sticky .btn-ghost{flex:1;text-align:center;padding:14px 10px}
+@media (max-width:720px){.sticky{display:flex}}
+
+/* ---------- reveal ---------- */
+.rv{opacity:0;transform:translateY(14px);transition:opacity .7s ease,transform .7s ease}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
+
+a:focus-visible,summary:focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:2px}
+</style>
+</head>
+<body>
+
+<div class="topline" id="topline" aria-hidden="true"></div>
+
+<div class="spine">
+
+<header>
+  <div class="wrap bar">
+    <a class="mark" href="#top"><span></span>Healing Point</a>
+    <nav>
+      <a href="#reasons">What we treat</a>
+      <a href="#about">About</a>
+      <a href="#visit">First visit</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#book">Book</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap">
+    <p class="eyebrow">Acupuncture · Tulsa, Oklahoma</p>
+    <h1>Relief for the things you've <em>learned to live with.</em></h1>
+    <p class="lede">Pain that comes back. Sleep that doesn't. Stress your body started keeping score of. Acupuncture treats the system underneath the symptom, and the first visit is unhurried by design.</p>
+    <div class="actions">
+      <a class="btn" href="[GOOGLE-BOOKING-LINK]">Book your first visit</a>
+      <a class="btn-ghost" href="tel:[PHONE]">Call [PHONE]</a>
+    </div>
+    <p class="hero-meta">New patients welcome · HSA and FSA cards accepted</p>
+  </div>
+</section>
+
+<section class="reasons" id="reasons">
+  <div class="wrap rv">
+    <p class="eyebrow">What brings people in</p>
+    <p class="lede">Most people come for one thing and stay for three. Here's what fills the schedule.</p>
+    <div class="grid">
+      <div class="cell"><h3>Back and neck pain</h3><p>Chronic tension, sciatica, the desk-job ache that never fully resolves.</p></div>
+      <div class="cell"><h3>Headaches and migraines</h3><p>Frequency, intensity, and the days you lose to them.</p></div>
+      <div class="cell"><h3>Trouble sleeping</h3><p>Falling asleep, staying asleep, waking at 3am wide awake.</p></div>
+      <div class="cell"><h3>Stress and anxiety</h3><p>A nervous system stuck in the on position, and what that does to everything else.</p></div>
+      <div class="cell"><h3>Cycles and hormones</h3><p>Painful or irregular periods, PMS, perimenopause, fertility support.</p></div>
+      <div class="cell"><h3>Digestion</h3><p>Bloating, reflux, IBS, and the food list that keeps getting shorter.</p></div>
+      <div class="cell"><h3>Injury recovery</h3><p>Post-surgical healing, sports injuries, range of motion that stalled out.</p></div>
+      <div class="cell"><h3>Fatigue and burnout</h3><p>Tired in a way that sleep doesn't touch.</p></div>
+    </div>
+    <p class="note">Not on the list? Ask anyway. Acupuncture works on the whole system rather than a single complaint, so the answer is often yes.</p>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap rv">
+    <p class="eyebrow">Your acupuncturist</p>
+    <div class="about-grid">
+      <div class="portrait"><em>Portrait slot. Swap this block<br>for a photo when you have one.</em></div>
+      <div>
+        <h2>Careful hands, unhurried time, and a real conversation first.</h2>
+        <p>[HER NAME] practices acupuncture in Tulsa. [One or two sentences on why she came to this work. Something specific and personal beats anything polished. A patient decides here whether to trust her.]</p>
+        <p>She treats one person at a time in a quiet room. No rushed intake, no assembly line. You'll leave the first visit knowing what she thinks is going on and what the plan is.</p>
+        <div class="creds">
+          <div>Master of Acupuncture, [SCHOOL], [MONTH YEAR]</div>
+          <div>[NCCAOM certification status once earned]</div>
+          <div>Clean needle technique certified</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="visit" id="visit">
+  <div class="wrap rv">
+    <p class="eyebrow">Your first visit</p>
+    <h2>About 75 minutes, start to finish.</h2>
+    <p class="lede">If you've never done this before, here's exactly what happens. Wear loose clothing.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="clock">0:00</div>
+        <div><h3>We talk</h3><p>Full history. What hurts, what you've already tried, how you sleep, what you eat, what you actually want out of this.</p></div>
+      </div>
+      <div class="step">
+        <div class="clock">0:20</div>
+        <div><h3>She looks</h3><p>Pulse, tongue, and how you move. This is how Chinese medicine reads the system rather than the symptom.</p></div>
+      </div>
+      <div class="step">
+        <div class="clock">0:30</div>
+        <div><h3>Treatment</h3><p>Hair-thin needles, mostly below the knee and elbow. You rest for about 30 minutes. Most people fall asleep.</p></div>
+      </div>
+      <div class="step">
+        <div class="clock">1:05</div>
+        <div><h3>A plan</h3><p>What she found, how often to come back, and anything simple to do at home. No packages pushed on you.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="wrap rv">
+    <p class="eyebrow">Pricing</p>
+    <p class="lede">Straightforward and posted. Cash pay, no insurance billing, so there's no surprise bill later.</p>
+    <div class="rows">
+      <div class="row">
+        <div><h3>First visit</h3><p>Consultation, exam, and full treatment. About 75 minutes.</p></div>
+        <div class="price">$[XX]</div>
+      </div>
+      <div class="row">
+        <div><h3>Follow-up visit</h3><p>About 50 minutes.</p></div>
+        <div class="price">$[XX]</div>
+      </div>
+      <div class="row">
+        <div><h3>Series of five</h3><p>For chronic conditions, where a course of treatment does the work.</p></div>
+        <div class="price">$[XXX]</div>
+      </div>
+    </div>
+    <p class="note">HSA and FSA cards accepted. If cost is the thing standing in the way, say so when you call.</p>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="wrap rv">
+    <p class="eyebrow">Questions people actually ask</p>
+    <details open>
+      <summary>Does it hurt?</summary>
+      <p>The needles are about the width of a hair, and nothing like the ones used for shots or blood draws. You may feel a quick pinch going in, then a dull heaviness or warmth around the point. That sensation is the treatment working. Most people are asleep within ten minutes.</p>
+    </details>
+    <details>
+      <summary>How many visits will I need?</summary>
+      <p>It depends on how long you've had the problem. Recent injuries often turn around in a few visits. Something you've carried for years usually needs weekly visits for a month or two before spacing out. You should feel some change within the first two or three treatments, and if you don't, she'll tell you rather than keep booking you.</p>
+    </details>
+    <details>
+      <summary>Can I use my HSA or FSA?</summary>
+      <p>Yes. HSA and FSA cards are accepted at the time of visit, and you'll get an itemized receipt for your records.</p>
+    </details>
+  </div>
+</section>
+
+<section class="book" id="book">
+  <div class="wrap rv">
+    <p class="eyebrow">Book</p>
+    <h2>Pick a time that works. That's the whole process.</h2>
+    <div class="actions">
+      <a class="btn" href="[GOOGLE-BOOKING-LINK]">See available times</a>
+      <a class="btn-ghost" href="tel:[PHONE]">Or call [PHONE]</a>
+    </div>
+    <div class="info">
+      <div>
+        <h4>Where</h4>
+        <p>[STREET ADDRESS]<br>Tulsa, OK [ZIP]</p>
+        <a href="[GOOGLE-MAPS-LINK]">Get directions</a>
+      </div>
+      <div>
+        <h4>Hours</h4>
+        <div class="hours"><span>Mon</span><span>[9–5]</span></div>
+        <div class="hours"><span>Tue</span><span>[9–5]</span></div>
+        <div class="hours"><span>Wed</span><span>[9–5]</span></div>
+        <div class="hours"><span>Thu</span><span>[9–5]</span></div>
+        <div class="hours"><span>Fri</span><span>[9–2]</span></div>
+        <div class="hours"><span>Sat–Sun</span><span>Closed</span></div>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a href="tel:[PHONE]">[PHONE]</a><br>
+        <a href="mailto:hello@healing-point.com">hello@healing-point.com</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>© 2026 Healing Point · Tulsa, Oklahoma</div>
+    <div>Acupuncture is not a substitute for emergency or urgent medical care.</div>
+  </div>
+</footer>
+
+</div>
+
+<div class="sticky">
+  <a class="btn" href="[GOOGLE-BOOKING-LINK]">Book a visit</a>
+  <a class="btn-ghost" href="tel:[PHONE]">Call</a>
+</div>
+
+<script>
+const spine = document.querySelector('.spine');
+function progress(){
+  const r = spine.getBoundingClientRect();
+  const total = r.height - window.innerHeight;
+  const p = Math.min(Math.max((-r.top) / (total > 0 ? total : 1), 0), 1);
+  const pct = (p * 100).toFixed(2) + '%';
+  spine.style.setProperty('--progress', pct);
+  document.getElementById('topline').style.setProperty('--progress', pct);
+}
+addEventListener('scroll', progress, {passive:true});
+addEventListener('resize', progress);
+progress();
+
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }});
+}, {threshold:0.12});
+document.querySelectorAll('.rv').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
