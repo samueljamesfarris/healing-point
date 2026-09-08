@@ -194,6 +194,9 @@ details p{margin:16px 0 0;color:var(--ink-soft);max-width:64ch;font-size:15.5px}
 .info h4{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);margin:0 0 12px;font-family:"Karla",sans-serif;font-weight:600}
 .info p,.info a{font-size:15.5px;margin:0 0 4px;text-decoration:none}
 .info a:hover{color:var(--amber)}
+.btn-inline{display:inline-block;margin-top:2px;padding:11px 20px;font-size:14px}
+.info .btn-inline:hover{color:inherit}
+.mail{cursor:pointer}
 .hours{display:flex;justify-content:space-between;font-size:15px;max-width:230px;color:var(--ink-soft)}
 .hours span:first-child{color:var(--ink)}
 
@@ -414,12 +417,12 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--amber);outline-off
       </div>
       <div>
         <h4>Before your visit</h4>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSchAy-hi82EaELdV9KbTxiz63brhOXTvmMOvipuCOVSMmZS9Q/viewform?usp=header" target="_blank" rel="noopener">New patient intake form</a>
+        <a class="btn-ghost btn-inline" href="https://docs.google.com/forms/d/e/1FAIpQLSchAy-hi82EaELdV9KbTxiz63brhOXTvmMOvipuCOVSMmZS9Q/viewform?usp=header" target="_blank" rel="noopener">New patient intake form</a>
       </div>
       <div>
         <h4>Call or text</h4>
         <a href="tel:+19182307065">918.230.7065</a><br>
-        <a href="mailto:hello@healing-point.com">hello@healing-point.com</a>
+        <a class="mail" data-u="sarah" data-d="healing-point.com">Email Sarah</a>
       </div>
     </div>
   </div>
@@ -457,6 +460,11 @@ const io = new IntersectionObserver((entries) => {
   entries.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }});
 }, {threshold:0.12});
 document.querySelectorAll('.rv').forEach(el => io.observe(el));
+
+// email address is assembled here so it never appears as a literal string in the HTML
+document.querySelectorAll('.mail').forEach(a => {
+  a.href = 'mail' + 'to:' + a.dataset.u + String.fromCharCode(64) + a.dataset.d;
+});
 </script>
 </body>
 </html>
