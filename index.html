@@ -68,6 +68,7 @@ a{color:inherit}
 @media (prefers-color-scheme:dark){
   body{background:var(--paper);color:var(--ink)}
   .reasons,.faq,.cell,.voices,.quote{background:var(--paper-warm)}
+  header.stuck{background-color:rgba(233,230,219,.94)}
   .visit{background:var(--pine);color:var(--paper-warm)}
 }
 
@@ -96,6 +97,27 @@ header{position:relative;z-index:5;padding:26px 0}
 .bar nav a{text-decoration:none;color:var(--ink-soft)}
 .bar nav a:hover{color:var(--ink)}
 @media (max-width:720px){.bar nav{display:none}}
+
+/* ---------- sticky header, desktop only ---------- */
+@media (min-width:721px){
+  header{position:sticky;top:0;z-index:25;transition:background-color .25s ease}
+  header::after{
+    content:"";position:absolute;left:0;right:0;bottom:0;height:1px;
+    background:transparent;transition:background .25s ease;
+  }
+  header.stuck{
+    background-color:rgba(233,230,219,.94);
+    background-image:linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,0));
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+  }
+  header.stuck::after{background:var(--line)}
+  /* keep anchor jumps from landing under the bar */
+  section{scroll-margin-top:104px}
+}
+@media (prefers-reduced-motion:reduce){
+  header,header::after{transition:none}
+}
 
 /* ---------- hero ---------- */
 .hero{padding-top:clamp(40px,6vw,80px)}
@@ -444,7 +466,9 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--amber);outline-off
 
 <script>
 const spine = document.querySelector('.spine');
+const head = document.querySelector('header');
 function progress(){
+  head.classList.toggle('stuck', window.scrollY > 8);
   const r = spine.getBoundingClientRect();
   const total = r.height - window.innerHeight;
   const p = Math.min(Math.max((-r.top) / (total > 0 ? total : 1), 0), 1);
