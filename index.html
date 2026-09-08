@@ -69,7 +69,7 @@ a{color:inherit}
 /* hold the palette even if the OS or browser asks for dark */
 @media (prefers-color-scheme:dark){
   body{background:var(--paper);color:var(--ink)}
-  .reasons,.faq,.cell{background:var(--paper-warm)}
+  .reasons,.faq,.cell,.voices,.quote{background:var(--paper-warm)}
   .visit{background:var(--pine);color:var(--paper-warm)}
 }
 
@@ -161,7 +161,7 @@ header{position:relative;z-index:5;padding:26px 0}
 .visit h2{font-size:clamp(30px,3.6vw,44px);margin-bottom:14px}
 .visit .lede{color:rgba(241,238,228,.72)}
 .steps{margin-top:52px;border-top:1px solid rgba(241,238,228,.16)}
-.step{display:grid;grid-template-columns:110px 1fr;gap:clamp(16px,4vw,48px);padding:26px 0;border-bottom:1px solid rgba(241,238,228,.16)}
+.step{display:grid;grid-template-columns:132px 1fr;gap:clamp(16px,4vw,48px);padding:26px 0;border-bottom:1px solid rgba(241,238,228,.16)}
 @media (max-width:620px){.step{grid-template-columns:1fr;gap:6px}}
 .clock{font-family:"Newsreader",serif;font-size:22px;color:#D9A03F;font-variant-numeric:tabular-nums}
 .step h3{font-size:22px;margin-bottom:6px}
@@ -211,6 +211,19 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between}
 .sticky .btn,.sticky .btn-ghost{flex:1;text-align:center;padding:14px 10px}
 @media (max-width:720px){.sticky{display:flex}}
 
+/* ---------- testimonials ---------- */
+.voices{
+  background-color:var(--paper-warm);
+  background-image:linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,0));
+}
+.voices h2{font-size:clamp(30px,3.6vw,44px);line-height:1.14;margin-bottom:14px;max-width:20ch}
+.quotes{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin-top:44px}
+.quote{background:var(--paper-warm);margin:0;padding:30px 28px 26px;display:flex;flex-direction:column;gap:18px}
+.quote blockquote{margin:0;font-family:"Newsreader",Georgia,serif;font-size:19.5px;line-height:1.5;font-style:italic}
+.quote blockquote::before{content:"\201C";color:var(--amber);font-style:normal;margin-right:2px}
+.quote blockquote::after{content:"\201D";color:var(--amber);font-style:normal;margin-left:1px}
+.quote figcaption{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);font-weight:600;margin-top:auto}
+
 /* ---------- reveal ---------- */
 .rv{opacity:0;transform:translateY(14px);transition:opacity .7s ease,transform .7s ease}
 .rv.in{opacity:1;transform:none}
@@ -244,10 +257,10 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--amber);outline-off
     <h1>Relief for the things you've <em>learned to live with.</em></h1>
     <p class="lede">Pain that comes back. Sleep that doesn't. Stress your body started keeping score of. Acupuncture treats the system underneath the symptom, and the first visit is unhurried by design.</p>
     <div class="actions">
-      <a class="btn" href="[GOOGLE-BOOKING-LINK]">Book your first visit</a>
-      <a class="btn-ghost" href="tel:+19182307065">Call 918.230.7065</a>
+      <a class="btn" href="https://calendar.app.google/YAcvYeYL5oCzdsvq8">Book your first visit</a>
+      <a class="btn-ghost" href="tel:+19182307065">Call or text 918.230.7065</a>
     </div>
-    <p class="hero-meta">New patients welcome · HSA and FSA cards accepted</p>
+    <p class="hero-meta">New patients welcome · HSA and FSA cards coming soon</p>
   </div>
 </section>
 
@@ -280,7 +293,8 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--amber);outline-off
         <p>She feels what other people are carrying more than most do, which is an inconvenient trait in most jobs and close to the whole point of this one.</p>
         <p>She treats one person at a time in a quiet room. No rushed intake, no assembly line. You'll leave the first visit knowing what she thinks is going on and what the plan is.</p>
         <div class="creds">
-          <div>Completed acupuncture training, schooling, and internship in August 2026</div>
+          <div>Natural Health &amp; Wellness School of Natural Medicine, August 2026</div>
+          <div>Advanced course of study in acupuncture, herbology, diagnosis, moxibustion, and bodywork</div>
         </div>
       </div>
     </div>
@@ -290,7 +304,7 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--amber);outline-off
 <section class="visit" id="visit">
   <div class="wrap rv">
     <p class="eyebrow">Your first visit</p>
-    <h2>About 75 minutes, start to finish.</h2>
+    <h2>Plan on 90 to 120 minutes.</h2>
     <p class="lede">If you've never done this before, here's exactly what happens. Wear loose clothing.</p>
     <div class="steps">
       <div class="step">
@@ -298,17 +312,43 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--amber);outline-off
         <div><h3>We talk</h3><p>Full history. What hurts, what you've already tried, how you sleep, what you eat, what you actually want out of this.</p></div>
       </div>
       <div class="step">
-        <div class="clock">0:20</div>
+        <div class="clock">0:25–0:35</div>
         <div><h3>She looks</h3><p>Pulse, tongue, and how you move. This is how Chinese medicine reads the system rather than the symptom.</p></div>
       </div>
       <div class="step">
-        <div class="clock">0:30</div>
-        <div><h3>Treatment</h3><p>Hair-thin needles, mostly below the knee and elbow. You rest for about 30 minutes. Most people fall asleep.</p></div>
+        <div class="clock">0:40–0:50</div>
+        <div><h3>Treatment</h3><p>Hair-thin needles, placed according to what she found and what you are working on. You rest for about 40 minutes. Most people fall asleep.</p></div>
       </div>
       <div class="step">
-        <div class="clock">1:05</div>
+        <div class="clock">1:20–1:40</div>
         <div><h3>A plan</h3><p>What she found, how often to come back, and anything simple to do at home. No packages pushed on you.</p></div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="voices" id="voices">
+  <div class="wrap rv">
+    <p class="eyebrow">In their words</p>
+    <h2>What people say afterward.</h2>
+    <p class="lede">Real patients, used with their permission.</p>
+    <div class="quotes">
+      <figure class="quote">
+        <blockquote>[Testimonial one. Two or three sentences in the patient's own words. Ask about the experience rather than the outcome: how she listened, how they felt walking out, what surprised them.]</blockquote>
+        <figcaption>[First name and last initial], Tulsa</figcaption>
+      </figure>
+      <figure class="quote">
+        <blockquote>[Testimonial two. Two or three sentences in the patient's own words. Ask about the experience rather than the outcome: how she listened, how they felt walking out, what surprised them.]</blockquote>
+        <figcaption>[First name and last initial], Tulsa</figcaption>
+      </figure>
+      <figure class="quote">
+        <blockquote>[Testimonial three. Two or three sentences in the patient's own words. Ask about the experience rather than the outcome: how she listened, how they felt walking out, what surprised them.]</blockquote>
+        <figcaption>[First name and last initial], Tulsa</figcaption>
+      </figure>
+      <figure class="quote">
+        <blockquote>[Testimonial four. Two or three sentences in the patient's own words. Ask about the experience rather than the outcome: how she listened, how they felt walking out, what surprised them.]</blockquote>
+        <figcaption>[First name and last initial], Tulsa</figcaption>
+      </figure>
     </div>
   </div>
 </section>
@@ -319,8 +359,8 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--amber);outline-off
     <p class="lede">Straightforward and posted. Cash pay, no insurance billing, so there's no surprise bill later.</p>
     <div class="rows">
       <div class="row">
-        <div><h3>First visit</h3><p>Consultation, exam, and full treatment. About 75 minutes.</p></div>
-        <div class="price">$150</div>
+        <div><h3>First visit</h3><p>Consultation, exam, and full treatment. About 90 to 120 minutes.</p></div>
+        <div class="price">$100</div>
       </div>
       <div class="row">
         <div><h3>Follow-up visit</h3><p>About 50 minutes.</p></div>
@@ -331,7 +371,7 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--amber);outline-off
         <div class="price">$325</div>
       </div>
     </div>
-    <p class="note">HSA and FSA cards accepted. If cost is the thing standing in the way, say so when you call.</p>
+    <p class="note">Card processing for HSA and FSA accounts is being set up now and will be available soon. If cost is the thing standing in the way, say so when you call or text.</p>
   </div>
 </section>
 
@@ -340,7 +380,7 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--amber);outline-off
     <p class="eyebrow">Questions people actually ask</p>
     <details open>
       <summary>Does it hurt?</summary>
-      <p>The needles are about the width of a hair, and nothing like the ones used for shots or blood draws. You may feel a quick pinch going in, then a dull heaviness or warmth around the point. That sensation is the treatment working. Most people are asleep within ten minutes.</p>
+      <p>The needles are about the width of a hair, and nothing like the ones used for shots or blood draws. You will not feel most of them go in. When you do, it is a quick pinch at first, then a dull heaviness or warmth around the point. That sensation is the treatment working. Most people fall asleep during treatment.</p>
     </details>
     <details>
       <summary>How many visits will I need?</summary>
@@ -348,7 +388,7 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--amber);outline-off
     </details>
     <details>
       <summary>Can I use my HSA or FSA?</summary>
-      <p>Yes. HSA and FSA cards are accepted at the time of visit, and you'll get an itemized receipt for your records.</p>
+      <p>Soon. Card processing for HSA and FSA accounts is being set up now and is not live yet. Once it is, you can pay with the card at the time of the visit. Either way you get an itemized receipt for your records.</p>
     </details>
   </div>
 </section>
@@ -358,8 +398,8 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--amber);outline-off
     <p class="eyebrow">Book</p>
     <h2>Pick a time that works. That's the whole process.</h2>
     <div class="actions">
-      <a class="btn" href="[GOOGLE-BOOKING-LINK]">See available times</a>
-      <a class="btn-ghost" href="tel:+19182307065">Or call 918.230.7065</a>
+      <a class="btn" href="https://calendar.app.google/YAcvYeYL5oCzdsvq8">See available times</a>
+      <a class="btn-ghost" href="tel:+19182307065">Call or text 918.230.7065</a>
     </div>
     <div class="info">
       <div>
@@ -372,7 +412,7 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--amber);outline-off
         <div class="hours"><span>Sat–Sun</span><span>Closed</span></div>
       </div>
       <div>
-        <h4>Contact</h4>
+        <h4>Call or text</h4>
         <a href="tel:+19182307065">918.230.7065</a><br>
         <a href="mailto:hello@healing-point.com">hello@healing-point.com</a>
       </div>
@@ -390,8 +430,8 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--amber);outline-off
 </div>
 
 <div class="sticky">
-  <a class="btn" href="[GOOGLE-BOOKING-LINK]">Book a visit</a>
-  <a class="btn-ghost" href="tel:+19182307065">Call</a>
+  <a class="btn" href="https://calendar.app.google/YAcvYeYL5oCzdsvq8">Book a visit</a>
+  <a class="btn-ghost" href="tel:+19182307065">Call or text</a>
 </div>
 
 <script>
