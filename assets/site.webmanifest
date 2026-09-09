@@ -1,0 +1,11 @@
+{
+  "name": "Healing Point Acupuncture",
+  "short_name": "Healing Point",
+  "icons": [
+    { "src": "icon-192.png", "type": "image/png", "sizes": "192x192" },
+    { "src": "icon-512.png", "type": "image/png", "sizes": "512x512" }
+  ],
+  "theme_color": "#2E4A3F",
+  "background_color": "#E9E6DB",
+  "display": "standalone"
+}
